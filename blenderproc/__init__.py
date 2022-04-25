@@ -47,5 +47,7 @@ else:
         is_correct_startup_command = first_file_name in ["blenderproc", "command_line.py"]
     if "OUTSIDE_OF_THE_INTERNAL_BLENDER_PYTHON_ENVIRONMENT_BUT_IN_RUN_SCRIPT" not in os.environ \
             and not is_correct_startup_command:
-        raise Exception("\n###############\nThis script can only be run by \"blenderproc run\", instead of calling:"
-                        "\n\tpython {}\ncall:\n\tblenderproc run {}\n###############".format(sys.argv[0], sys.argv[0]))
+        # raise Exception("\n###############\nThis script can only be run by \"blenderproc run\", instead of calling:"
+        #                 "\n\tpython {}\ncall:\n\tblenderproc run {}\n###############".format(sys.argv[0], sys.argv[0]))
+        # OH: I silence this exception so that the module blenderproc could be imported
+        pass
